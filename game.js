@@ -6,8 +6,8 @@ const CONFIG = {
     GRAVITY: 0.015,
     CAMERA_HEIGHT: 1.8,
     MOUSE_SENSITIVITY: 0.002,
-    ENEMY_SPAWN_INTERVAL: 5000,
-    MAX_ENEMIES: 20,
+    ENEMY_SPAWN_INTERVAL: 4000,
+    MAX_ENEMIES: 35,
     LOOT_DROP_CHANCE: 0.7,
     XP_PER_LEVEL: 100,
     WORLD_SIZE: 200
@@ -146,7 +146,8 @@ const ENEMY_TYPES = [
         xp: 25,
         color: 0x1a0033,
         speed: 0.08,
-        scale: 1.2
+        scale: 1.2,
+        shape: 'cone'
     },
     {
         name: 'Hellhound',
@@ -155,7 +156,8 @@ const ENEMY_TYPES = [
         xp: 20,
         color: 0x660000,
         speed: 0.12,
-        scale: 0.8
+        scale: 0.8,
+        shape: 'cone'
     },
     {
         name: 'Corrupted Wraith',
@@ -164,7 +166,8 @@ const ENEMY_TYPES = [
         xp: 30,
         color: 0x003300,
         speed: 0.1,
-        scale: 1.5
+        scale: 1.5,
+        shape: 'cone'
     },
     {
         name: 'Abyssal Knight',
@@ -173,7 +176,8 @@ const ENEMY_TYPES = [
         xp: 50,
         color: 0x330000,
         speed: 0.06,
-        scale: 1.8
+        scale: 1.8,
+        shape: 'cone'
     },
     {
         name: 'Demon Lord',
@@ -182,7 +186,178 @@ const ENEMY_TYPES = [
         xp: 100,
         color: 0x660033,
         speed: 0.07,
-        scale: 2.5
+        scale: 2.5,
+        shape: 'cone'
+    },
+    {
+        name: 'Possessed Knight',
+        health: 250,
+        damage: 35,
+        xp: 45,
+        color: 0x330033,
+        speed: 0.07,
+        scale: 1.6,
+        shape: 'box'
+    },
+    {
+        name: 'Cursed Specter',
+        health: 120,
+        damage: 28,
+        xp: 35,
+        color: 0x220044,
+        speed: 0.09,
+        scale: 1.3,
+        shape: 'sphere'
+    },
+    {
+        name: 'Void Walker',
+        health: 180,
+        damage: 32,
+        xp: 40,
+        color: 0x000033,
+        speed: 0.11,
+        scale: 1.4,
+        shape: 'octahedron'
+    },
+    {
+        name: 'Blood Fiend',
+        health: 220,
+        damage: 38,
+        xp: 48,
+        color: 0x660011,
+        speed: 0.08,
+        scale: 1.5,
+        shape: 'cone'
+    },
+    {
+        name: 'Tormented Soul',
+        health: 90,
+        damage: 22,
+        xp: 28,
+        color: 0x334444,
+        speed: 0.13,
+        scale: 1.0,
+        shape: 'sphere'
+    },
+    {
+        name: 'Dark Revenant',
+        health: 280,
+        damage: 40,
+        xp: 55,
+        color: 0x220022,
+        speed: 0.06,
+        scale: 1.7,
+        shape: 'box'
+    },
+    {
+        name: 'Banshee',
+        health: 110,
+        damage: 30,
+        xp: 32,
+        color: 0x004444,
+        speed: 0.14,
+        scale: 1.2,
+        shape: 'sphere'
+    },
+    {
+        name: 'Nightmare Hound',
+        health: 140,
+        damage: 26,
+        xp: 35,
+        color: 0x440000,
+        speed: 0.15,
+        scale: 0.9,
+        shape: 'cone'
+    },
+    {
+        name: 'Possessed Warrior',
+        health: 320,
+        damage: 42,
+        xp: 60,
+        color: 0x442211,
+        speed: 0.06,
+        scale: 1.9,
+        shape: 'box'
+    },
+    {
+        name: 'Ethereal Shade',
+        health: 95,
+        damage: 24,
+        xp: 30,
+        color: 0x111133,
+        speed: 0.12,
+        scale: 1.1,
+        shape: 'octahedron'
+    },
+    {
+        name: 'Malevolent Spirit',
+        health: 130,
+        damage: 27,
+        xp: 33,
+        color: 0x332200,
+        speed: 0.10,
+        scale: 1.3,
+        shape: 'sphere'
+    },
+    {
+        name: 'Infernal Guardian',
+        health: 400,
+        damage: 45,
+        xp: 70,
+        color: 0x551100,
+        speed: 0.05,
+        scale: 2.2,
+        shape: 'box'
+    },
+    {
+        name: 'Possessed Mage',
+        health: 160,
+        damage: 36,
+        xp: 42,
+        color: 0x220055,
+        speed: 0.07,
+        scale: 1.4,
+        shape: 'cone'
+    },
+    {
+        name: 'Shadow Lurker',
+        health: 105,
+        damage: 23,
+        xp: 29,
+        color: 0x111111,
+        speed: 0.11,
+        scale: 1.1,
+        shape: 'octahedron'
+    },
+    {
+        name: 'Corrupted Paladin',
+        health: 350,
+        damage: 48,
+        xp: 65,
+        color: 0x443300,
+        speed: 0.06,
+        scale: 2.0,
+        shape: 'box'
+    },
+    {
+        name: 'Vengeful Ghost',
+        health: 115,
+        damage: 29,
+        xp: 31,
+        color: 0x224466,
+        speed: 0.13,
+        scale: 1.2,
+        shape: 'sphere'
+    },
+    {
+        name: 'Dread Lord',
+        health: 600,
+        damage: 55,
+        xp: 120,
+        color: 0x440044,
+        speed: 0.05,
+        scale: 2.8,
+        shape: 'box'
     }
 ];
 
@@ -521,30 +696,235 @@ class DarkKnightRPG {
     }
 
     setupWorld() {
-        // Ground
-        const groundGeometry = new THREE.PlaneGeometry(CONFIG.WORLD_SIZE, CONFIG.WORLD_SIZE, 50, 50);
+        // Create textured castle floor with stone and wood tiles
+        const tileSize = 4;
+        const tilesPerSide = Math.floor(CONFIG.WORLD_SIZE / tileSize);
 
-        // Distort ground for uneven terrain
-        const positions = groundGeometry.attributes.position.array;
-        for (let i = 0; i < positions.length; i += 3) {
-            positions[i + 2] = Math.random() * 2 - 1;
+        // Create canvas for procedural texture
+        const canvas = document.createElement('canvas');
+        canvas.width = 2048;
+        canvas.height = 2048;
+        const ctx = canvas.getContext('2d');
+
+        const pixelsPerTile = canvas.width / tilesPerSide;
+
+        for (let x = 0; x < tilesPerSide; x++) {
+            for (let y = 0; y < tilesPerSide; y++) {
+                const px = x * pixelsPerTile;
+                const py = y * pixelsPerTile;
+
+                // Determine tile type: stone or wood
+                const isWood = Math.random() < 0.15; // 15% wood tiles
+
+                if (isWood) {
+                    // Wood plank tile
+                    const woodShade = 40 + Math.random() * 30;
+                    ctx.fillStyle = `rgb(${woodShade + 20}, ${woodShade + 10}, ${woodShade})`;
+                    ctx.fillRect(px, py, pixelsPerTile, pixelsPerTile);
+
+                    // Wood grain
+                    ctx.strokeStyle = `rgba(0, 0, 0, 0.2)`;
+                    ctx.lineWidth = 2;
+                    for (let i = 0; i < 3; i++) {
+                        ctx.beginPath();
+                        ctx.moveTo(px, py + i * pixelsPerTile / 3);
+                        ctx.lineTo(px + pixelsPerTile, py + i * pixelsPerTile / 3);
+                        ctx.stroke();
+                    }
+                } else {
+                    // Stone tile
+                    const stoneShade = 30 + Math.random() * 25;
+                    ctx.fillStyle = `rgb(${stoneShade}, ${stoneShade}, ${stoneShade + 5})`;
+                    ctx.fillRect(px, py, pixelsPerTile, pixelsPerTile);
+
+                    // Stone texture details
+                    for (let i = 0; i < 10; i++) {
+                        const spotX = px + Math.random() * pixelsPerTile;
+                        const spotY = py + Math.random() * pixelsPerTile;
+                        const spotSize = Math.random() * 3 + 1;
+                        ctx.fillStyle = `rgba(${Math.random() * 50}, ${Math.random() * 50}, ${Math.random() * 50}, 0.3)`;
+                        ctx.fillRect(spotX, spotY, spotSize, spotSize);
+                    }
+                }
+
+                // Grout/mortar lines between tiles
+                ctx.strokeStyle = 'rgba(10, 10, 10, 0.8)';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(px, py, pixelsPerTile, pixelsPerTile);
+            }
         }
-        groundGeometry.computeVertexNormals();
 
+        // Create texture from canvas
+        const floorTexture = new THREE.CanvasTexture(canvas);
+        floorTexture.wrapS = THREE.RepeatWrapping;
+        floorTexture.wrapT = THREE.RepeatWrapping;
+
+        // Create ground with texture
+        const groundGeometry = new THREE.PlaneGeometry(CONFIG.WORLD_SIZE, CONFIG.WORLD_SIZE);
         const groundMaterial = new THREE.MeshPhongMaterial({
-            color: 0x1a1a1a,
-            flatShading: true
+            map: floorTexture,
+            shininess: 5
         });
         const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
         ground.receiveShadow = true;
         this.scene.add(ground);
 
-        // Add ominous structures
-        for (let i = 0; i < 30; i++) {
-            const height = Math.random() * 10 + 5;
-            const radius = Math.random() * 2 + 1;
-            const geometry = new THREE.CylinderGeometry(radius, radius * 1.5, height, 6);
+        // Create perimeter walls
+        const wallHeight = 15;
+        const wallThickness = 2;
+
+        // Create wall texture
+        const wallCanvas = document.createElement('canvas');
+        wallCanvas.width = 1024;
+        wallCanvas.height = 512;
+        const wallCtx = wallCanvas.getContext('2d');
+
+        // Stone wall texture
+        const brickWidth = 80;
+        const brickHeight = 40;
+        const bricksX = Math.ceil(wallCanvas.width / brickWidth);
+        const bricksY = Math.ceil(wallCanvas.height / brickHeight);
+
+        for (let by = 0; by < bricksY; by++) {
+            for (let bx = 0; bx < bricksX; bx++) {
+                const offsetX = (by % 2) * brickWidth / 2;
+                const px = bx * brickWidth + offsetX;
+                const py = by * brickHeight;
+
+                // Brick color variation
+                const shade = 35 + Math.random() * 20;
+                wallCtx.fillStyle = `rgb(${shade}, ${shade - 5}, ${shade - 10})`;
+                wallCtx.fillRect(px, py, brickWidth - 2, brickHeight - 2);
+
+                // Brick details
+                wallCtx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+                wallCtx.lineWidth = 2;
+                wallCtx.strokeRect(px, py, brickWidth - 2, brickHeight - 2);
+            }
+        }
+
+        const wallTexture = new THREE.CanvasTexture(wallCanvas);
+        wallTexture.wrapS = THREE.RepeatWrapping;
+        wallTexture.wrapT = THREE.RepeatWrapping;
+        wallTexture.repeat.set(4, 2);
+
+        const wallMaterial = new THREE.MeshPhongMaterial({
+            map: wallTexture,
+            side: THREE.DoubleSide
+        });
+
+        const halfSize = CONFIG.WORLD_SIZE / 2;
+
+        // North wall
+        const northWallGeo = new THREE.BoxGeometry(CONFIG.WORLD_SIZE, wallHeight, wallThickness);
+        const northWall = new THREE.Mesh(northWallGeo, wallMaterial);
+        northWall.position.set(0, wallHeight / 2, -halfSize);
+        northWall.castShadow = true;
+        northWall.receiveShadow = true;
+        this.scene.add(northWall);
+
+        // South wall
+        const southWall = new THREE.Mesh(northWallGeo, wallMaterial);
+        southWall.position.set(0, wallHeight / 2, halfSize);
+        southWall.castShadow = true;
+        southWall.receiveShadow = true;
+        this.scene.add(southWall);
+
+        // East wall
+        const eastWallGeo = new THREE.BoxGeometry(wallThickness, wallHeight, CONFIG.WORLD_SIZE);
+        const eastWall = new THREE.Mesh(eastWallGeo, wallMaterial);
+        eastWall.position.set(halfSize, wallHeight / 2, 0);
+        eastWall.castShadow = true;
+        eastWall.receiveShadow = true;
+        this.scene.add(eastWall);
+
+        // West wall
+        const westWall = new THREE.Mesh(eastWallGeo, wallMaterial);
+        westWall.position.set(-halfSize, wallHeight / 2, 0);
+        westWall.castShadow = true;
+        westWall.receiveShadow = true;
+        this.scene.add(westWall);
+
+        // Add battlements/crenellations on top of walls
+        const battlmentSize = 2;
+        const battlmentSpacing = 8;
+
+        for (let i = -halfSize; i < halfSize; i += battlmentSpacing) {
+            // North wall battlements
+            const battlement1 = new THREE.Mesh(
+                new THREE.BoxGeometry(battlmentSize, 2, battlmentSize),
+                wallMaterial
+            );
+            battlement1.position.set(i, wallHeight + 1, -halfSize);
+            battlement1.castShadow = true;
+            this.scene.add(battlement1);
+
+            // South wall battlements
+            const battlement2 = new THREE.Mesh(
+                new THREE.BoxGeometry(battlmentSize, 2, battlmentSize),
+                wallMaterial
+            );
+            battlement2.position.set(i, wallHeight + 1, halfSize);
+            battlement2.castShadow = true;
+            this.scene.add(battlement2);
+
+            // East wall battlements
+            const battlement3 = new THREE.Mesh(
+                new THREE.BoxGeometry(battlmentSize, 2, battlmentSize),
+                wallMaterial
+            );
+            battlement3.position.set(halfSize, wallHeight + 1, i);
+            battlement3.castShadow = true;
+            this.scene.add(battlement3);
+
+            // West wall battlements
+            const battlement4 = new THREE.Mesh(
+                new THREE.BoxGeometry(battlmentSize, 2, battlmentSize),
+                wallMaterial
+            );
+            battlement4.position.set(-halfSize, wallHeight + 1, i);
+            battlement4.castShadow = true;
+            this.scene.add(battlement4);
+        }
+
+        // Add corner towers
+        const towerRadius = 8;
+        const towerHeight = 20;
+        const towerGeo = new THREE.CylinderGeometry(towerRadius, towerRadius + 1, towerHeight, 8);
+        const towerMaterial = new THREE.MeshPhongMaterial({
+            color: 0x2a2a2a,
+            map: wallTexture
+        });
+
+        const corners = [
+            [halfSize - towerRadius, halfSize - towerRadius],
+            [-halfSize + towerRadius, halfSize - towerRadius],
+            [halfSize - towerRadius, -halfSize + towerRadius],
+            [-halfSize + towerRadius, -halfSize + towerRadius]
+        ];
+
+        corners.forEach(([x, z]) => {
+            const tower = new THREE.Mesh(towerGeo, towerMaterial);
+            tower.position.set(x, towerHeight / 2, z);
+            tower.castShadow = true;
+            tower.receiveShadow = true;
+            this.scene.add(tower);
+
+            // Tower top cone
+            const roofGeo = new THREE.ConeGeometry(towerRadius + 1, 5, 8);
+            const roofMat = new THREE.MeshPhongMaterial({ color: 0x1a1a1a });
+            const roof = new THREE.Mesh(roofGeo, roofMat);
+            roof.position.set(x, towerHeight + 2.5, z);
+            roof.castShadow = true;
+            this.scene.add(roof);
+        });
+
+        // Add ominous interior structures
+        for (let i = 0; i < 25; i++) {
+            const height = Math.random() * 8 + 4;
+            const radius = Math.random() * 1.5 + 0.8;
+            const geometry = new THREE.CylinderGeometry(radius, radius * 1.3, height, 6);
             const material = new THREE.MeshPhongMaterial({
                 color: 0x222222,
                 emissive: 0x110011
@@ -552,7 +932,7 @@ class DarkKnightRPG {
             const pillar = new THREE.Mesh(geometry, material);
 
             const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 80 + 20;
+            const distance = Math.random() * 70 + 15;
             pillar.position.set(
                 Math.cos(angle) * distance,
                 height / 2,
@@ -563,9 +943,9 @@ class DarkKnightRPG {
             this.scene.add(pillar);
         }
 
-        // Add some rocks/obstacles
-        for (let i = 0; i < 50; i++) {
-            const size = Math.random() * 3 + 1;
+        // Add some debris/rocks
+        for (let i = 0; i < 40; i++) {
+            const size = Math.random() * 2.5 + 0.8;
             const geometry = new THREE.DodecahedronGeometry(size);
             const material = new THREE.MeshPhongMaterial({
                 color: 0x333333,
@@ -574,7 +954,7 @@ class DarkKnightRPG {
             const rock = new THREE.Mesh(geometry, material);
 
             const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 90 + 10;
+            const distance = Math.random() * 85 + 10;
             rock.position.set(
                 Math.cos(angle) * distance,
                 size / 2,
@@ -597,9 +977,9 @@ class DarkKnightRPG {
 
         for (let i = 0; i < particleCount; i++) {
             particlePositions.push(
-                (Math.random() - 0.5) * CONFIG.WORLD_SIZE,
+                (Math.random() - 0.5) * CONFIG.WORLD_SIZE * 0.9,
                 Math.random() * 50,
-                (Math.random() - 0.5) * CONFIG.WORLD_SIZE
+                (Math.random() - 0.5) * CONFIG.WORLD_SIZE * 0.9
             );
         }
 
@@ -1009,12 +1389,29 @@ class DarkKnightRPG {
             this.gameState.player.position.z + Math.sin(angle) * distance
         );
 
-        // Create enemy mesh
-        const geometry = new THREE.ConeGeometry(type.scale * 0.5, type.scale * 2, 8);
+        // Create enemy mesh with different shapes
+        let geometry;
+        switch (type.shape) {
+            case 'box':
+                geometry = new THREE.BoxGeometry(type.scale, type.scale * 2, type.scale);
+                break;
+            case 'sphere':
+                geometry = new THREE.SphereGeometry(type.scale * 0.6, 16, 16);
+                break;
+            case 'octahedron':
+                geometry = new THREE.OctahedronGeometry(type.scale * 0.7);
+                break;
+            case 'cone':
+            default:
+                geometry = new THREE.ConeGeometry(type.scale * 0.5, type.scale * 2, 8);
+                break;
+        }
+
         const material = new THREE.MeshPhongMaterial({
             color: type.color,
             emissive: type.color,
-            emissiveIntensity: 0.3
+            emissiveIntensity: 0.3,
+            flatShading: true
         });
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.copy(position);
